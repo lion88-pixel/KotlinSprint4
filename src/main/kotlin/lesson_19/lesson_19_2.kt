@@ -1,17 +1,16 @@
 package org.example.lesson_19
 
 enum class ProductCategory {
-    CLOTHING {
-        override fun getUserFriendlyName(): String = "Одежда"
-    },
-    STATIONERY {
-        override fun getUserFriendlyName(): String = "Канцелярские товары"
-    },
-    MISCELLANEOUS {
-        override fun getUserFriendlyName(): String = "Разное"
-    };
+    CLOTHING,
+    STATIONERY,
+    MISCELLANEOUS;
 
-    abstract fun getUserFriendlyName(): String
+    fun getUserFriendlyName(): String =
+        when (this) {
+            CLOTHING -> "Одежда"
+            STATIONERY -> "Канцелярские товары"
+            MISCELLANEOUS -> "Разное"
+        }
 }
 
 class Product(val name: String, val id: Int, val category: ProductCategory) {
