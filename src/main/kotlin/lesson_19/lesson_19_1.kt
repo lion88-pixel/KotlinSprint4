@@ -9,7 +9,7 @@ enum class FishType {
 
 fun main() {
     println("Добавь в аквариум следующие виды рыб:")
-    FishType.values().forEach { fish ->
+    FishType.entries.forEach { fish ->
         println("- ${fish.name}")
     }
 }
